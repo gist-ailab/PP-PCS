@@ -1,7 +1,7 @@
 # Probability Propagation for Point Cloud Segmentation (PP-PCS) 
 Official Implementation of the **"Probability Propagation for Faster and Efficient Point Cloud Segmentation using a Neural Network (Accepted at PRL 2023)"**.
 
-[[Paper]]() [[ArXiv]]
+[[Paper]](https://doi.org/10.1016/j.patrec.2023.04.010)
 
 
 # Updates & TODO Lists
@@ -30,11 +30,14 @@ cd Pointnet_Pointnet2_pytorch/
 python train_partseg.py --model pointnet2_part_seg_msg --normal --log_dir $ckp_root
 ```
 
+## Checkpoints 
+[[ckp_url]]()
+
 ## How to Run Probability Propagation (PP)
 
 1. Download code zip file and unzip or clone our repository
 
- - check the pretrained models in folder (aaai-pp-repo/pp/pretrained_models)
+ - download the pretrained models in folder (PP-PCS/pretrained_models)
  - or you can train PointNet++ network from-scratch following upper discription
 
 2. Evaluate part-segmentation with PP method
