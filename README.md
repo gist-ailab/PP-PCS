@@ -20,7 +20,7 @@ Official Implementation of the **"Probability Propagation for Faster and Efficie
 git clone https://github.com/yanx27/Pointnet_Pointnet2_pytorch.git
 ```
 
-2. Download the ShapeNet dataset at (https://shapenet.cs.stanford.edu/media/shapenetcore_partanno_segmentation_benchmark_v0_normal.zip) 
+2. Download the ShapeNet dataset from [[Here]](https://shapenet.cs.stanford.edu/media/shapenetcore_partanno_segmentation_benchmark_v0_normal.zip) 
 
 3. Trainig PointNet++ with ShapeNet
  - $ckp_root : where to save checkpoint 
