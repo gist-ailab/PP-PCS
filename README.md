@@ -1,6 +1,8 @@
 # Probability Propagation for Point Cloud Segmentation (PP-PCS) 
 Official Implementation of the **"Probability Propagation for Faster and Efficient Point Cloud Segmentation using a Neural Network (Accepted at PRL 2023)"**.
 
+![Main Image](figure/main.jpg)
+
 [[Paper]](https://doi.org/10.1016/j.patrec.2023.04.010)
 
 
