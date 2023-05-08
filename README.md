@@ -64,83 +64,27 @@ Epoch | Sampling method | number of points | probability mapping, distance ratio
 
 
 4. Results
-\begin{table*}
-\centering
-\caption{\label{tab:class-ious}Best class-wise mean intersection over union of using NN or NN+PP with Poisson disk sampling and exponential distribution}
-\resizebox{\textwidth}{!}{
-\begin{tabular}{cc||ccccccccccccccc||c} 
-\toprule
-\multirow{2}{*}{\begin{tabular}[c]{@{}c@{}}\textbf{Sampling}\\\textbf{Ratio}\end{tabular}} & \multirow{2}{*}{\textbf{Method}} & \multicolumn{15}{c||}{\textbf{Best Class-wise Mean Intersection over Union (bold text indicates higher performance value)}} & \multirow{2}{*}{\textbf{Average}} \\
- & & Cap & Rocket & Skateboard & Mug & Laptop & Car & Pistol & Guitar & Airplane & Chair & Motorbike & Table & Knife & Lamp & Earphone & \\ 
-\hhline{==::===============::=}
-\multirow{2}{*}{\textbf{5\%}} & \textbf{NN} & \textbf{60.61} & \textbf{38.95} & \textbf{68.92} & \textbf{80.55} & \textbf{95.07} & \textbf{60.26} & \textbf{74.16} & \textbf{84.22} & 62.85 & 84.71 & 30.21 & 77.52 & 77.90 & 72.98 & 52.17 & 75.62 \\
- & \textbf{NN+PP} & 57.46 & 36.78 & 68.07 & 79.98 & 93.76 & 59.11 & 73.66 & 84.13 & \textbf{62.86} & \textbf{86.49} & \textbf{31.54} & 7\textbf{9.50} & \textbf{80.81} & \textbf{80.50} & \textbf{69.04} & \textbf{77.43} \\ 
-\midrule
-\multirow{2}{*}{\textbf{10\%}} & \textbf{NN} & \textbf{60.82} & \textbf{46.22} & 68.10 & \textbf{78.09} & \textbf{95.18} & \textbf{55.69} & \textbf{71.86} & 87.80 & 61.98 & 86.85 & 25.19 & 77.56 & 80.58 & 75.47 & 63.22 & 76.27 \\
- & \textbf{NN+PP} & 55.95 & 44.67 & \textbf{68.49} & 77.20 & 94.70 & 54.33 & 70.82 & \textbf{87.81} & \textbf{62.29} & \textbf{87.21} & \textbf{28.30} & \textbf{79.35} & \textbf{82.66} & \textbf{79.20} & \textbf{68.41} & \textbf{77.20} \\ 
-\midrule
-\multirow{2}{*}{\textbf{20\%}} & \textbf{NN} & \textbf{57.96} & \textbf{56.62} & \textbf{71.21} & 79.62 & \textbf{95.25} & \textbf{58.07} & \textbf{77.42} & 87.13 & 63.20 & 86.57 & 30.27 & 78.64 & 80.90 & 77.41 & 68.22 & 77.23 \\
- & \textbf{NN+PP} & 56.57 & 55.64 & 69.90 & \textbf{79.67} & 94.82 & 57.63 & 77.28 & \textbf{87.20} & \textbf{63.20} & \textbf{86.90} & \textbf{30.73} & \textbf{79.44} & \textbf{81.79} & \textbf{79.58} & \textbf{69.69} & \textbf{77.79} \\ 
-\midrule
-\multirow{2}{*}{\textbf{39\%}} & \textbf{NN} & \textbf{61.59} & \textbf{49.92} & \textbf{69.95} & \textbf{63.10} & \textbf{94.54} & 58.93 & \textbf{75.97} & \textbf{88.08} & 65.94 & 87.08 & 35.80 & 78.62 & 80.12 & 78.58 & 73.21 & 77.72 \\
- & \textbf{NN+PP} & 60.69 & 49.25 & 68.97 & 61.74 & 94.17 & \textbf{59.06} & 75.81 & 87.98 & \textbf{66.17} & \textbf{87.95} & \textbf{36.39} & \textbf{79.55} & \textbf{80.36} & \textbf{79.24} & \textbf{73.93} & \textbf{78.24} \\ 
-\midrule
-\multirow{2}{*}{\textbf{78\%}} & \textbf{NN} & 66.04 & \textbf{50.53} & \textbf{69.40} & \textbf{88.67} & 94.94 & 56.96 & \textbf{73.81} & \textbf{86.23} & 68.03 & 86.63 & 33.79 & 77.68 & 77.69 & 78.14 & \textbf{67.12} & 77.55 \\
- & \textbf{NN+PP} & \textbf{66.13} & 50.31 & 69.09 & 88.45 & \textbf{94.94} & \textbf{57.54} & 73.78 & 86.09 & \textbf{68.51} & \textbf{87.17} & \textbf{33.87} & \textbf{78.26} & \textbf{77.85} & \textbf{78.64} & 67.11 & \textbf{78.00} \\
-\bottomrule
-\end{tabular}
-}
-\end{table*}
-
-\begin{figure*}
-\centering
-\includegraphics[width=0.99\linewidth]{aaai_fig/A_I_mIOU_vertical.png}
-\caption{Instance mean intersection over union (mIoU) for sampling method, sampling ratio, and effective distance ratio}
-\label{fig:A_I_mIOU}
-\end{figure*}
-
-\begin{figure}
-\centering
-\includegraphics[width=\linewidth]{aaai_fig/normalized_distance_info_vertical.png}
-\caption{\label{fig:normalized_distance_info}Normalized distance to the closest neighboring point according to the sampling condition (SD: standard deviation)}
-\end{figure}
-
-\begin{figure}
-\centering
-\includegraphics[width=\linewidth]{aaai_fig/best_cutoff_distance_ratio_iou.png}
-\caption{\label{fig:best_cutoff_distance_ratio}Best effective distance ratio for sampling method and its ratio at the best instance mean intersection over union}
-\end{figure}
-
-\begin{figure}
-\centering
-\includegraphics[width=\linewidth]{aaai_fig/mIOU_speed_nn_vertical.png}
-\caption{\label{fig:best_performance_speed_nn}Inference time of point cloud segmentation using NN+PP with exponential distribution relative to using NN at the best instance mean intersection over union (mIoU)}
-\end{figure}
-
-\begin{table}
-\centering
-\caption{\label{tab:inference_time}Inference time per object at the best instance mean intersection over union according to sampling condition (unit: second)}
-\resizebox{\linewidth}{!}{
-\begin{tabular}{cc||ccccc} 
-\toprule
-\multirow{2}{*}{\begin{tabular}[c]{@{}c@{}}\textbf{Sampling}\\\textbf{ Method}\end{tabular}} & \multirow{2}{*}{\begin{tabular}[c]{@{}c@{}}\textbf{Inference}\\\textbf{Method}\end{tabular}} & \multicolumn{5}{c}{\textbf{Sampling Ratio}} \\
- & & 5\% & 10\% & 20\% & 39\% & 78\% \\ 
-\hhline{==::=====}
-\multirow{3}{*}{\begin{tabular}[c]{@{}c@{}}\textbf{Random}\\\textbf{ Sampling}\end{tabular}} & \textbf{NN} & 4.881 & 2.339 & 1.238 & 0.504 & 0.287 \\
- & \textbf{NN+PP} & 0.153 & 0.141 & 0.203 & 0.243 & 0.264 \\ 
-\cdashline{2-7}[1pt/1pt]
- & NN/(NN+PP) & 31.810 & 16.641 & 6.112 & 2.079 & 1.087 \\ 
-\hline
-\multirow{3}{*}{\begin{tabular}[c]{@{}c@{}}\textbf{Farthest}\\\textbf{Point}\\\textbf{Sampling}\end{tabular}} & \textbf{NN} & 4.661 & 2.576 & 1.453 & 0.796 & 0.451 \\
- & \textbf{NN+PP} & 0.046 & 0.070 & 0.134 & 0.198 & 0.206 \\ 
-\cdashline{2-7}[1pt/1pt]
- & NN/(NN+PP) & 102.267 & 36.649 & 10.875 & 4.016 & 2.184 \\ 
-\hline
-\multirow{3}{*}{\begin{tabular}[c]{@{}c@{}}\textbf{Poisson}\\\textbf{ Disk}\\\textbf{ Sampling}\end{tabular}} & \textbf{NN} & 2.769 & 1.171 & 0.692 & 0.329 & 0.208 \\
- & \textbf{NN+PP} & 0.048 & 0.071 & 0.110 & 0.171 & 0.225 \\ 
-\cdashline{2-7}[1pt/1pt]
- & NN/(NN+PP) & 57.659 & 16.415 & 6.311 & 1.927 & 0.923 \\
-\bottomrule
-\end{tabular}
-}
-\end{table}
+| \multirow{2}{*}{\begin{tabular}[c]{@{}c@{}}\textbf{Sampling} |
+|--------------------------------------------------------------|
+|                                                              |                | Cap            | Rocket         | Skateboard     | Mug            | Laptop         | Car            | Pistol         | Guitar         | Airplane       | Chair          | Motorbike      | Table          | Knife          | Lamp           | Earphone       |                |
+| \multirow{2}{*}{\textbf{5\%}}                                | \textbf{NN}    | \textbf{60.61} | \textbf{38.95} | \textbf{68.92} | \textbf{80.55} | \textbf{95.07} | \textbf{60.26} | \textbf{74.16} | \textbf{84.22} | 62.85          | 84.71          | 30.21          | 77.52          | 77.90          | 72.98          | 52.17          | 75.62          |
+|                                                              | \textbf{NN+PP} | 57.46          | 36.78          | 68.07          | 79.98          | 93.76          | 59.11          | 73.66          | 84.13          | \textbf{62.86} | \textbf{86.49} | \textbf{31.54} | 7\textbf{9.50} | \textbf{80.81} | \textbf{80.50} | \textbf{69.04} | \textbf{77.43} |
+| \multirow{2}{*}{\textbf{10\%}}                               | \textbf{NN}    | \textbf{60.82} | \textbf{46.22} | 68.10          | \textbf{78.09} | \textbf{95.18} | \textbf{55.69} | \textbf{71.86} | 87.80          | 61.98          | 86.85          | 25.19          | 77.56          | 80.58          | 75.47          | 63.22          | 76.27          |
+|                                                              | \textbf{NN+PP} | 55.95          | 44.67          | \textbf{68.49} | 77.20          | 94.70          | 54.33          | 70.82          | \textbf{87.81} | \textbf{62.29} | \textbf{87.21} | \textbf{28.30} | \textbf{79.35} | \textbf{82.66} | \textbf{79.20} | \textbf{68.41} | \textbf{77.20} |
+| \multirow{2}{*}{\textbf{20\%}}                               | \textbf{NN}    | \textbf{57.96} | \textbf{56.62} | \textbf{71.21} | 79.62          | \textbf{95.25} | \textbf{58.07} | \textbf{77.42} | 87.13          | 63.20          | 86.57          | 30.27          | 78.64          | 80.90          | 77.41          | 68.22          | 77.23          |
+|                                                              | \textbf{NN+PP} | 56.57          | 55.64          | 69.90          | \textbf{79.67} | 94.82          | 57.63          | 77.28          | \textbf{87.20} | \textbf{63.20} | \textbf{86.90} | \textbf{30.73} | \textbf{79.44} | \textbf{81.79} | \textbf{79.58} | \textbf{69.69} | \textbf{77.79} |
+| \multirow{2}{*}{\textbf{39\%}}                               | \textbf{NN}    | \textbf{61.59} | \textbf{49.92} | \textbf{69.95} | \textbf{63.10} | \textbf{94.54} | 58.93          | \textbf{75.97} | \textbf{88.08} | 65.94          | 87.08          | 35.80          | 78.62          | 80.12          | 78.58          | 73.21          | 77.72          |
+|                                                              | \textbf{NN+PP} | 60.69          | 49.25          | 68.97          | 61.74          | 94.17          | \textbf{59.06} | 75.81          | 87.98          | \textbf{66.17} | \textbf{87.95} | \textbf{36.39} | \textbf{79.55} | \textbf{80.36} | \textbf{79.24} | \textbf{73.93} | \textbf{78.24} |
+| \multirow{2}{*}{\textbf{78\%}}                               | \textbf{NN}    | 66.04          | \textbf{50.53} | \textbf{69.40} | \textbf{88.67} | 94.94          | 56.96          | \textbf{73.81} | \textbf{86.23} | 68.03          | 86.63          | 33.79          | 77.68          | 77.69          | 78.14          | \textbf{67.12} | 77.55          |
+|                                                              | \textbf{NN+PP} | \textbf{66.13} | 50.31          | 69.09          | 88.45          | \textbf{94.94} | \textbf{57.54} | 73.78          | 86.09          | \textbf{68.51} | \textbf{87.17} | \textbf{33.87} | \textbf{78.26} | \textbf{77.85} | \textbf{78.64} | 67.11          | \textbf{78.00} |
+| \multirow{2}{*}{\begin{tabular}[c]{@{}c@{}}\textbf{Sampling} |
+|                                                              |                | 5\%            | 10\%           | 20\%           | 39\%           | 78\%           |
+| \multirow{3}{*}{\begin{tabular}[c]{@{}c@{}}\textbf{Random}   |
+|                                                              | \textbf{NN+PP} | 0.153          | 0.141          | 0.203          | 0.243          | 0.264          |
+|                                                              | NN/(NN+PP)     | 31.810         | 16.641         | 6.112          | 2.079          | 1.087          |
+| \multirow{3}{*}{\begin{tabular}[c]{@{}c@{}}\textbf{Farthest} |
+|                                                              | \textbf{NN+PP} | 0.046          | 0.070          | 0.134          | 0.198          | 0.206          |
+|                                                              | NN/(NN+PP)     | 102.267        | 36.649         | 10.875         | 4.016          | 2.184          |
+| \multirow{3}{*}{\begin{tabular}[c]{@{}c@{}}\textbf{Poisson}  |
+|                                                              | \textbf{NN+PP} | 0.048          | 0.071          | 0.110          | 0.171          | 0.225          |
+|                                                              | NN/(NN+PP)     | 57.659         | 16.415         | 6.311          | 1.927          | 0.923          |
